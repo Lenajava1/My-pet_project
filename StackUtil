@@ -1,0 +1,20 @@
+package com.mycompany.lab;
+import com.mycompany.lab.SimpleStack;
+
+public class StackUtil {
+    
+    public static Stack createStack(Stack s) {
+        
+        Stack newStack = new SimpleStack(s.size());
+              
+      while(!s.isEmpty()){
+         
+          newStack.push(s.pop());
+      }
+        
+   
+        return newStack;
+
+}
+    
+}
