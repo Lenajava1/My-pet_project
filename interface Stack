@@ -1,0 +1,20 @@
+package com.mycompany.lab;
+
+
+public interface Stack {
+    
+    void push(int value);  
+    
+    int pop();
+
+    boolean isEmpty();  
+    
+    boolean isFull(); 
+    
+    int size();
+    
+    void clear();
+    
+ 
+    
+}
