@@ -1,0 +1,101 @@
+package com.mycompany.lab;
+
+import java.util.Arrays;
+
+public class SimpleStack implements Stack {
+
+    private int[] array;
+    private int top;// это вершина стека или индекс последненго элемента в массиве array
+    private int maxSize;// размер массива
+
+  
+    public SimpleStack(int m) {
+        
+        maxSize = m;
+        array = new int[maxSize];
+        top = -1;
+
+    }
+
+  
+    @Override
+    public void push(int value) {
+        
+        if (top != maxSize - 1) {
+
+            int i = ++top;
+            array[i] = value;
+        } else {
+            System.out.println("Element out of bound of array");
+        }
+
+    }
+
+    @Override
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+            return 0;
+        } else {             
+           return array[top--];
+        }
+        
+    }
+
+    @Override
+    public boolean isEmpty() {
+        if (top == -1) {
+            System.out.println("The Stack is empty");
+            return true;
+
+        } else {
+            return false;
+        }
+
+    }
+
+    @Override
+    public boolean isFull() {
+        if (top == array.length-1) {
+            
+              return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    @Override
+    public int size() {
+       
+            return top+1;
+        }
+     
+    @Override
+    public void clear() {
+        
+        for (int i = 0; i < array.length; i++) {
+            array[i] = 0;
+            top = -1;
+
+        }
+
+    }
+
+    
+    @Override
+    public String toString() {
+        
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = top; i >= 0; i--) {
+
+            sb.append(array[i] + " ");
+
+        }
+
+        return "{" + "array = " + sb + '}';
+    }
+    
+  
+}
