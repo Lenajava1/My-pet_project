@@ -1,0 +1,35 @@
+package com.mycompany.lab;
+
+
+public class Test {
+    
+    public static void main(String[] args) {
+
+        Stack s = new SimpleStack(7);
+
+        s.push(6);
+        s.push(35);
+        s.push(17);
+        s.push(9);
+        s.pop();
+        s.push(43);
+        s.push(14);
+        s.pop();
+
+        System.out.println("Print Stack = " + s.toString());
+        System.out.println("Current size of array = " + s.size());
+
+        System.out.println("The Stack is full = " + s.isFull());
+
+        //s.clear();
+        System.out.println(s.isEmpty());
+
+        System.out.println("Print Stack after cleaning " + s.toString());
+
+        Stack s1 = StackUtil.createStack(s);
+
+        System.out.println("Print new Stack " + s1);
+
+    }
+
+}
