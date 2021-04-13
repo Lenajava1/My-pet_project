@@ -1,0 +1,14 @@
+package com.mycompany.lab;
+
+public abstract class AbstractShape {
+    
+    private String name;
+
+    public AbstractShape(String name) {
+        this.name = name;
+    }
+
+  public abstract void test();
+    
+    
+}
